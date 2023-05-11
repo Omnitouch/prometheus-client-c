@@ -18,6 +18,7 @@ and an example can be found under example/. Check under the releases tab for tar
 ## Installing
 
 To install run `sudo install.sh` in the root of the repo. This will install libprom.so and libpromhttp.so to /usr/lib.
+Be sure to include the shared objects dynamic linker path when compiling like the following example: `clang main.c -lprom -lpromhttp -Wl,-rpath=/usr/lib -o main`
 
 ## Versioning
 
