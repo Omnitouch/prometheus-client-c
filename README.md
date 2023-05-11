@@ -1,5 +1,6 @@
 # prometheus-client-c
 
+
 [![Build Status](https://github.com/digitalocean/prometheus-client-c/workflows/CI/badge.svg)](https://github.com/digitalocean/prometheus-client-c/actions)
 
 This project provides shared libraries for instrumenting software via [Prometheus](https://prometheus.io)
@@ -13,6 +14,10 @@ This project provides shared libraries for instrumenting software via [Prometheu
 Documentation can be found
 [at the documentation site](https://digitalocean.github.io/prometheus-client-c/)
 and an example can be found under example/. Check under the releases tab for tarballs and debian installers
+
+## Installing
+
+To install run `sudo install.sh` in the root of the repo. This will install libprom.so and libpromhttp.so to /usr/lib.
 
 ## Versioning
 
