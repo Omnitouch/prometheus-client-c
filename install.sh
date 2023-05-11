@@ -1,11 +1,13 @@
+root=$PWD
+
 # libprom
-cd /home/ayrdim/Documents/workspace/c/prometheus-client-c/prom
+cd $root/prom
 cmake .
 make
-sudo mv libprom.so /usr/lib
+sudo cp libprom.so /usr/lib
 
 # libpromhttp
-cd /home/ayrdim/Documents/workspace/c/prometheus-client-c/promhttp
+cd $root/promhttp
 cmake .
 make
-sudo mv libpromhttp.so /usr/lib
+sudo cp libpromhttp.so /usr/lib
