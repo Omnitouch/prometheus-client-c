@@ -29,6 +29,7 @@ void promhttp_set_active_collector_registry(prom_collector_registry_t *active_re
   }
 }
 
+/* Might need to return `enum MHD_Result` depending on which microhttpd version was installed */
 int promhttp_handler(void *cls, struct MHD_Connection *connection, const char *url, const char *method,
                      const char *version, const char *upload_data, size_t *upload_data_size, void **con_cls) {
   if (strcmp(method, "GET") != 0) {
