@@ -1,6 +1,10 @@
 cd $(dirname "$0")
 root=$PWD
 
+#install deps
+cd $root/deps
+./install.sh
+
 # libprom
 cd $root/prom
 cmake .
