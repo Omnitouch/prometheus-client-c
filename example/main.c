@@ -17,9 +17,9 @@ int main(int argc, const char **argv)
     promhttp_set_active_collector_registry(NULL);
 
     /* Make counter */
-    // const char *counter_labels[LABELS_SZ] = {"counter_label_one", "counter_label_two", "counter_label_three", "counter_label_four", "counter_label_five"};
-    // prom_counter_t *my_counter = prom_counter_new("my_counter", "counts things", LABELS_SZ, counter_labels);
-    // prom_metric_t *counter_metric = prom_collector_registry_must_register_metric(my_counter);
+    const char *counter_labels[LABELS_SZ] = {"counter_label_one", "counter_label_two", "counter_label_three", "counter_label_four", "counter_label_five"};
+    prom_counter_t *my_counter = prom_counter_new("my_counter", "counts things", LABELS_SZ, counter_labels);
+    prom_metric_t *counter_metric = prom_collector_registry_must_register_metric(my_counter);
 
     // /* Make gauge */
     // const char *gauge_labels[LABELS_SZ] = {"gauge_label_one", "gauge_label_two", "gauge_label_three", "gauge_label_four", "gauge_label_five"};
@@ -93,10 +93,10 @@ int main(int argc, const char **argv)
 
     while (1)
     {
-        // for (int i = 0; i < LABELS_SZ; ++i) {
-        //     prom_counter_inc(counter_metric, &counter_labels[i]);
-        // }
-        
+        for (int i = 0; i < LABELS_SZ; ++i) {
+            prom_counter_inc(counter_metric, &counter_labels);
+        }
+        printf("Update...\n");
         sleep(3);
     }
 
